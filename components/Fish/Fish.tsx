@@ -23,6 +23,7 @@ type props = {
   time: string;
 };
 
+// þarf að refactora í box-layout-component
 export function Fish({
   name,
   shadow,
@@ -56,15 +57,12 @@ export function Fish({
           <ul className={s.info__box__list}>
             <li>Price: {price}</li>
             <li>Price CJ: {priceCj}</li>
-            <li>shadow: {shadow}</li>
           </ul>
         </div>
         <div className={s.info__box}>
-          <h2 className={s.info__box__header}>Availability</h2>
+          <h2 className={s.info__box__header}>Shadow</h2>
           <ul className={s.info__box__list}>
-            {availability['month-array-northern'].map((month) => (
-              <li key={month}>{month}</li>
-            ))}
+            <li>{shadow}</li>
           </ul>
         </div>
         <h1 className={s.info__boxes__header}>Phrases</h1>
@@ -111,10 +109,14 @@ export function Fish({
         <div className={s.info__box}>
           <h2 className={s.info__box__header}>Time found</h2>
           {!availability.isAllDay && (
-            <p className={s.info__box__text}>Can be found from {time}</p>
+            <ul className={s.info__box__list}>
+              <li>Can be found from {time}</li>
+            </ul>
           )}
           {availability.isAllDay && (
-            <p className={s.info__box__text}>Can be found all day</p>
+            <ul className={s.info__box__list}>
+              <li>Can be found all day!</li>
+            </ul>
           )}
         </div>
       </div>

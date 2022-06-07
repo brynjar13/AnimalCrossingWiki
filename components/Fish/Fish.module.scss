@@ -1,6 +1,7 @@
 .image__container {
     display: flex;
     max-width: 50%;
+    max-height: 400px;
     flex-direction: column;
     margin: 0 auto 20px auto;
 
@@ -38,6 +39,7 @@
 }
 
 .info__box {
+    min-height: 350px;
     border-radius: 5px;
     grid-column: span 1;
     background-color: #39395f;
@@ -91,4 +93,3 @@
     text-align: center;
     max-width: 50%;
 }
-
