@@ -34,17 +34,21 @@ export function Fishes({ fishes }: props) {
         onChange={onchange}
       />
       <ul className={s.list}>
-        {fishArray.map((item) => (
-          <p key={item.fish} className={s.list__item}>
-            <Link href={`/fish/${item.id}`}>{item.fish}</Link>
-            <Image
-              src={item.icon}
-              alt={item.fish}
-              height={100}
-              width={100}
-            ></Image>
-          </p>
-        ))}
+        {fishArray.length > 0 &&
+          fishArray.map((item) => (
+            <p key={item.fish} className={s.list__item}>
+              <Link href={`/fish/${item.id}`}>{item.fish}</Link>
+              <Image
+                src={item.icon}
+                alt={item.fish}
+                height={100}
+                width={100}
+              ></Image>
+            </p>
+          ))}
+        {fishArray.length == 0 && (
+          <h2 className={s.header}>No fish with those letters</h2>
+        )}
       </ul>
     </div>
   );

@@ -3,5 +3,10 @@ import { useContext } from 'react';
 import s from './Footer.module.scss';
 
 export function Footer() {
-  return <h1 className={s.footer__text}>Hello</h1>;
+  return (
+    <div className={s.links}>
+      <Link href={'/'}>Index</Link>
+      <Link href={'/fish'}>Find fish</Link>
+    </div>
+  );
 }
