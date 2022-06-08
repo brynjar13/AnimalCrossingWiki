@@ -1,0 +1,11 @@
+.image__container {
+  display: flex;
+  max-width: 50%;
+  max-height: 400px;
+  flex-direction: column;
+  margin: 0 auto 20px auto;
+
+  &__text {
+    text-align: center;
+  }
+}

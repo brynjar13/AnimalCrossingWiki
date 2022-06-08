@@ -39,11 +39,11 @@ export function Creature({
   fish,
 }: props) {
   return (
-    <div className={s.fish}>
+    <div>
       <div className={s.image__container}>
         <h1 className={s.image__container__text}>{name}</h1>
         <Image
-          alt='fish'
+          alt='photo of creature'
           src={image}
           layout='responsive'
           objectFit='contain'
