@@ -10,15 +10,16 @@ type creature = {
 };
 
 type creatureType = {
-  creature: creature[];
+  creaturesArray: creature[];
+  creature: string;
 };
 
-export function SearchCreatures({ creature }: creatureType) {
-  const [creatureArray, setCreatureArray] = useState(creature);
+export function SearchCreatures({ creaturesArray, creature }: creatureType) {
+  const [creatureArray, setCreatureArray] = useState(creaturesArray);
 
   const onchange = (e: any) => {
     let visibleCreature: creature[] = [];
-    creature.forEach((item) => {
+    creaturesArray.forEach((item) => {
       if (item.name.toLowerCase().includes(e.target.value.toLowerCase())) {
         visibleCreature.push(item);
       }
@@ -29,7 +30,7 @@ export function SearchCreatures({ creature }: creatureType) {
     <div className={s.container}>
       <input
         type='search'
-        placeholder='Search for bugs'
+        placeholder={`Search for ${creature}`}
         className={s.searchBar}
         onChange={onchange}
       />
@@ -37,7 +38,7 @@ export function SearchCreatures({ creature }: creatureType) {
         {creatureArray.length > 0 &&
           creatureArray.map((item) => (
             <p key={item.name} className={s.list__item}>
-              <Link href={`/bugs/${item.id}`}>{item.name}</Link>
+              <Link href={`/${creature}/${item.id}`}>{item.name}</Link>
               <Image
                 src={item.icon}
                 alt={item.name}

@@ -8,7 +8,9 @@ type props = {
 };
 
 const Home: NextPage<{ fishes: props[] }> = ({ fishes }) => {
-  return <SearchCreatures creature={fishes}></SearchCreatures>;
+  return (
+    <SearchCreatures creaturesArray={fishes} creature='fish'></SearchCreatures>
+  );
 };
 
 export async function getStaticProps() {

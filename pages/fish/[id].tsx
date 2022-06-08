@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticPropsContext, NextPage } from 'next';
-import { Fish } from '../../components/Fish/Fish';
+import { Creature } from '../../components/Creature/Creature';
 
 type props = {
   id: number;
@@ -43,7 +43,7 @@ type props = {
 
 const Home: NextPage<{ json: props }> = ({ json }) => {
   return (
-    <Fish
+    <Creature
       name={json.name['name-USen']}
       shadow={json.shadow}
       availability={json.availability}
@@ -55,6 +55,7 @@ const Home: NextPage<{ json: props }> = ({ json }) => {
       rarity={json.availability.rarity}
       location={json.availability.location}
       time={json.availability.time}
+      fish={true}
     />
   );
 };

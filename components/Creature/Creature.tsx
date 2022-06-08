@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Card } from '../Card/Card';
-import s from './Fish.module.scss';
+import s from './Creature.module.scss';
 
 type availability = {
   isAllDay: boolean;
@@ -21,10 +21,10 @@ type props = {
   rarity: string;
   location: string;
   time: string;
+  fish: boolean;
 };
 
-// þarf að refactora í box-layout-component
-export function Fish({
+export function Creature({
   name,
   shadow,
   availability,
@@ -36,6 +36,7 @@ export function Fish({
   rarity,
   location,
   time,
+  fish,
 }: props) {
   return (
     <div className={s.fish}>
@@ -52,11 +53,22 @@ export function Fish({
       </div>
       <h1 className={s.info__header}>Info</h1>
       <div className={s.info__boxes}>
-        <Card
-          title={'Prices'}
-          listItems={[`Price: ${price}`, `Price CJ: ${priceCj}`]}
-        ></Card>
-        <Card title={'Shadow'} listItems={[shadow]}></Card>
+        {fish && (
+          <Card
+            title={'Prices'}
+            listItems={[`Price: ${price}`, `Price CJ: ${priceCj}`]}
+          ></Card>
+        )}
+        {!fish && (
+          <Card
+            title={'Prices'}
+            listItems={[`Price: ${price}`, `Price Flick: ${priceCj}`]}
+          ></Card>
+        )}
+        {fish && <Card title={'Shadow'} listItems={[shadow]}></Card>}
+        {!fish && (
+          <Card title={'Shadow'} listItems={['Bugs don`t have shadows']}></Card>
+        )}
         <h1 className={s.info__boxes__header}>Phrases</h1>
         <h1 className={s.filler}>filler</h1>
         <Card title={'Catch phrase'} listItems={[catchPhrase]}></Card>
