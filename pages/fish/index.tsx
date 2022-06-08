@@ -1,14 +1,14 @@
 import { NextPage } from 'next';
-import { Fishes } from '../../components/Fishes/Fishes';
+import { SearchCreatures } from '../../components/SearchCreatures/SearchCreatures';
 
 type props = {
-  fish: string;
+  name: string;
   icon: string;
   id: number;
 };
 
 const Home: NextPage<{ fishes: props[] }> = ({ fishes }) => {
-  return <Fishes fishes={fishes}></Fishes>;
+  return <SearchCreatures creature={fishes}></SearchCreatures>;
 };
 
 export async function getStaticProps() {
@@ -18,7 +18,7 @@ export async function getStaticProps() {
 
   for (const fish in json) {
     fishes.push({
-      fish: json[fish].name['name-USen'],
+      name: json[fish].name['name-USen'],
       icon: json[fish].icon_uri,
       id: json[fish].id,
     });

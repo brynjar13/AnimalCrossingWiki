@@ -19,12 +19,12 @@ const Home: NextPage = () => {
         svgName='people-svgrepo-com.svg'
       ></IndexCard>
       <IndexCard
-        link={'villagers'}
+        link={'bugs'}
         text={'Bugs'}
         svgName='bug-svgrepo-com.svg'
       ></IndexCard>
       <IndexCard
-        link={'villagers'}
+        link={'sea-creatues'}
         text={'Sea creatures'}
         svgName='crab-svgrepo-com.svg'
       ></IndexCard>
