@@ -1,26 +1,25 @@
 .layout {
-    &__header {
-      background-color: #73a24e;
-      margin: 0 auto;
-      padding: 1rem;
-    }
-  
-    &__main {
-      max-width: 100%;
-      margin: 0 auto;
-      padding: 0 1rem 1rem;
-      font-size: 20px;
-      background-color: #fffff1;
-    }
-  
-    &__footer {
-      max-width: 100%;
-      background-color: #73a24e;
-      margin: 0 auto;
-      padding: 1rem;
-    }
-
-    &__header__text {
-        text-align: center;
-    }
+  &__header {
+    background-color: #73a24e;
+    margin: 0 auto;
+    padding: 1rem;
   }
+
+  &__main {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    font-size: 20px;
+    background-color: #fffff1;
+  }
+
+  &__footer {
+    max-width: 100%;
+    background-color: #73a24e;
+    margin: 0 auto;
+  }
+
+  &__header__text {
+    text-align: center;
+  }
+}

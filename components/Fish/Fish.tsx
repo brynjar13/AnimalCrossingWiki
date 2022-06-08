@@ -1,5 +1,5 @@
-import { time } from 'console';
 import Image from 'next/image';
+import { Card } from '../Card/Card';
 import s from './Fish.module.scss';
 
 type availability = {
@@ -52,40 +52,20 @@ export function Fish({
       </div>
       <h1 className={s.info__header}>Info</h1>
       <div className={s.info__boxes}>
-        <div className={s.info__box}>
-          <h2 className={s.info__box__header}>Prices</h2>
-          <ul className={s.info__box__list}>
-            <li>Price: {price}</li>
-            <li>Price CJ: {priceCj}</li>
-          </ul>
-        </div>
-        <div className={s.info__box}>
-          <h2 className={s.info__box__header}>Shadow</h2>
-          <ul className={s.info__box__list}>
-            <li>{shadow}</li>
-          </ul>
-        </div>
+        <Card
+          title={'Prices'}
+          listItems={[`Price: ${price}`, `Price CJ: ${priceCj}`]}
+        ></Card>
+        <Card title={'Shadow'} listItems={[shadow]}></Card>
         <h1 className={s.info__boxes__header}>Phrases</h1>
         <h1 className={s.filler}>filler</h1>
-        <div className={s.info__box}>
-          <h2 className={s.info__box__header}>Catch phrase</h2>
-          <p className={s.info__box__text}>{catchPhrase}</p>
-        </div>
-        <div className={s.info__box}>
-          <h2 className={s.info__box__header}>Museum phrase</h2>
-          <p className={s.info__box__text}>{museumPhrase}</p>
-        </div>
+        <Card title={'Catch phrase'} listItems={[catchPhrase]}></Card>
+        <Card title={'Museum phrase'} listItems={[museumPhrase]}></Card>
         <h1 className={s.info__boxes__headerFour}>Availability</h1>
-        <div className={s.info__box}>
-          <h2 className={s.info__box__listHeader}>Rarity</h2>
-          <ul>
-            <li>{rarity}</li>
-          </ul>
-          <h2 className={s.info__box__listHeader}>Location</h2>
-          <ul>
-            <li>{location}</li>
-          </ul>
-        </div>
+        <Card
+          title={'Location and Rarity'}
+          listItems={[`${rarity} in ${location}`]}
+        ></Card>
         <div className={s.info__box}>
           <h2 className={s.info__box__header}>Months northern</h2>
           <ul className={s.info__box__list}>

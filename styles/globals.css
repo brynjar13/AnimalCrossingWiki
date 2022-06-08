@@ -14,3 +14,8 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.card__div {
+  display: flex;
+  height: 80vh;
+}
