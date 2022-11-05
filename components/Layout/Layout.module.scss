@@ -23,3 +23,14 @@
     text-align: center;
   }
 }
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+
+  a {
+    text-decoration: underline;
+  }
+}
