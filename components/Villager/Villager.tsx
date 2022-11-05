@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import s from './Villager.module.scss';
 
-export function Villager({ name, image }) {
+export function Villager({ name, image }: any) {
   return (
     <div>
       <div className={s.image__container}>
